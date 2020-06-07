@@ -1,15 +1,22 @@
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
 
-int main()
-{
-    int num1, num2;
-    float num3, num4;
-    scanf("%d %d %f %f", &num1, &num2, &num3,&num4);
+void update(int *a,int *b) {
+   int x,y;
+   x = *a + *b;
+   y = *a - *b;
+   *a = x;
+   *b = abs(y);
+    // Complete this function  
     
-    printf("%d %d \n", num1+num2 , num1-num2);
-    printf("%.1f %.1f \n", num3+num4 , num3-num4);
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
     return 0;
 }
